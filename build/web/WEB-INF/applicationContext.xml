@@ -5,34 +5,13 @@
        xmlns:p="http://www.springframework.org/schema/p"
        xmlns:aop="http://www.springframework.org/schema/aop"
        xmlns:tx="http://www.springframework.org/schema/tx"
-       xmlns:security="http://www.springframework.org/schema/security"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
-       http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd
-">
-    <security:http auto-config="true" use-expressions="true">
-        <security:intercept-url pattern="/admin**" access="hasRole('ROLE_ADMIN')"/>
-        <security:form-login 
-            login-page="/admin/user/login" 
-            default-target-url="/index" 
-            authentication-failure-url="/login?error"
-            username-parameter="username"
-            password-parameter="password" />
-        <logout logout-success-url="/login?logout"  />
-    </security:http>
-    
-    <security:authentication-manager>
-        <security:authentication-provider>
-            <security:user-service>
-                <security:user name="admin" password="admin" authorities="ROLE_ADMIN" />
-            </security:user-service>
-        </security:authentication-provider>
-    </security:authentication-manager>
-    
-    
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
+
     <bean id="propertyConfigurer"
           class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"
-          p:location="/WEB-INF/jdbc.properties" />
+          p:location="/WEB-INF/kabitaDatabase.properties" />
 
 <bean id="dataSource"
     class="org.springframework.jdbc.datasource.DriverManagerDataSource"
@@ -45,6 +24,6 @@
         <property name="dataSource" ref="dataSource"/>
     </bean>
 
-    <!-- ADD PERSISTENCE SUPPORT HERE (jpa, hibernate, etc) -->
+<!--     ADD PERSISTENCE SUPPORT HERE (jpa, hibernate, etc) -->
 
 </beans>

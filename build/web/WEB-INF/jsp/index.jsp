@@ -1,4 +1,3 @@
 <%@include file="header.jsp" %>
-            <h1>Home Page Design Insert Here !!</h1>
-        </div>
+    <h1>This Should be the Home Page!!</h1>
 <%@include file="footer.jsp" %>
