@@ -22,7 +22,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author sumanheuju
  */
-@WebFilter(filterName = "authFilter", urlPatterns = "/admin/*")
+@WebFilter(filterName = "authFilter", urlPatterns = {"/admin/*", "/users/*"})
 public class AuthFilter implements Filter{
 
 
@@ -38,7 +38,7 @@ public class AuthFilter implements Filter{
         if(session != null && session.getAttribute("loggedin") != null && (boolean) session.getAttribute("loggedin")){
             chain.doFilter(req, res);
         }else{
-            response.sendRedirect(request.getContextPath() + "/login?error");
+            response.sendRedirect(request.getContextPath() + "/?error");
         }
     }
 

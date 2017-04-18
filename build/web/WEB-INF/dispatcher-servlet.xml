@@ -16,12 +16,18 @@ http://www.springframework.org/schema/mvc http://www.springframework.org/schema/
     
     <context:component-scan base-package="com.themercinaries.kabita.eventmgnt"/>
     <mvc:annotation-driven/>
-    
+
+    <bean
+        class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter">
+    </bean>
     <bean class="org.springframework.web.servlet.mvc.support.ControllerClassNameHandlerMapping"/>
 
     <bean id="viewResolver"
           class="org.springframework.web.servlet.view.InternalResourceViewResolver"
           p:prefix="/WEB-INF/jsp/"
           p:suffix=".jsp" />
-
+    
+    <mvc:resources mapping="/static/**" location="/WEB-INF/assets/*"/>
+    
+    
 </beans>

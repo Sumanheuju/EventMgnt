@@ -5,9 +5,14 @@
  */
 package com.themercinaries.kabita.eventmgnt.controller;
 
+import com.themercinaries.kabita.eventmgnt.dao.UserDAO;
+import com.themercinaries.kabita.eventmgnt.entity.User;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  *
@@ -16,9 +21,32 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 @RequestMapping(value = "/")
 public class HomeController {
+    @Autowired
+    private UserDAO uDAO;
     
     @RequestMapping(method = RequestMethod.GET)
     public String home(){
         return "index";
+    }
+    
+//    @RequestMapping(value = "/register", method = RequestMethod.GET)
+//    public String add(Model model){
+//        model.addAttribute("user", new User());
+//        return "register";
+//    }
+    
+    @RequestMapping(value = "/register/save", method = RequestMethod.POST)
+    public String save(@RequestParam("username") String username,
+                        @RequestParam("email") String email,
+                        @RequestParam("password") String password){
+        
+        User usr = new User();
+        
+        usr.setUsername(username);
+        usr.setEmail(email);
+        usr.setPassword(password);
+        
+        uDAO.insert(usr);
+        return "redirect:/";
     }
 }
