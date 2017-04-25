@@ -35,12 +35,20 @@ public class UserDAOImpl implements UserDAO{
 
     @Override
     public int update(User u) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       
+        String sql = "UPDATE tbl_users SET username=?, email=?, password=? WHERE id=?";
+         
+        return jdbcTemplate.update(sql, new Object[]{
+           u.getUsername(),u.getEmail(),u.getPassword(),u.getId()
+        });
+        
     }
 
     @Override
     public int delete(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String sql = "DELETE FROM tbl_users WHERE id=?";
+        return jdbcTemplate.update(sql, new Object[]{id});
+        
     }
 
     @Override

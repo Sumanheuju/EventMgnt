@@ -5,7 +5,10 @@
  */
 package com.themercinaries.kabita.eventmgnt.controller.admin;
 
+import com.themercinaries.kabita.eventmgnt.dao.EventDAO;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -16,9 +19,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 @RequestMapping(value ="/admin/event")
 public class EventAdminController {
+    @Autowired
+    private EventDAO eDAO;
     
-    @RequestMapping(value="show", method = RequestMethod.GET)
-    public String show(){
+    @RequestMapping(value = "show", method = RequestMethod.GET)
+    public String index(Model model){
+        model.addAttribute("events", eDAO.getAll());
         return "/admin/event/eventDetail";
     }
+    
 }

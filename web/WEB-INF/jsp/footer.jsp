@@ -1,15 +1,17 @@
+<div class="container">
+    <br/>
+    <br/>
+</div>
+<div class="border-bottom"> </div>
 <div id="contact" class="contact">
     <!-- container -->
     <div class="container">
         <h3>Contact Us</h3>
         <div class="col-md-7">
             <div class="col-md-6">
-                <form>
-                    <input type="text" class="text" value="Name" onfocus="this.value = '';" onblur="if (this.value == '') {
-                                this.value = 'Name';
-                            }">
-                    <input type="text" class="text" value="Email" onfocus="this.value = '';" onblur="if (this.value == '') {
-                                this.value = 'Email';}">
+                <form class="cus-nav">
+                    <input type="text" class="text" value="Name" onfocus="this.value = '';" onblur="if (this.value == '')">
+                    <input type="text" class="text" value="Email" onfocus="this.value = '';" onblur="if (this.value == '')">
                 </form>
             </div>
             <div class="col-md-6">

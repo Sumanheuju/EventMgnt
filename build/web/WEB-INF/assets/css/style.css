@@ -9,6 +9,7 @@ html,body {
 	font-family: 'Open Sans', sans-serif;
 	background:#FFF;
 }
+
 .header{
 	background:url(../images/banner.png) no-repeat 0px 0px;
 	background-size:cover;	
@@ -27,6 +28,43 @@ html,body {
 .header-logo a span{
 	font-size: 33px;
 	font-weight: 300;
+}.cus-nav{
+	float:right;
+}
+.cus-nav p{
+	color:#FFF;
+	font-size:18px;
+	margin-top:4em;
+	font-weight:300;
+}
+.cus-nav p a{
+	font-size:18px;
+	color:#FFF;
+	font-weight:700;
+	margin-right:1em;
+}
+.cus-nav span a{
+	padding: 12px 25px;
+	color: #FFF;
+	background: #C72424;
+	margin-left: 1em;
+	font-weight: 500;
+	text-decoration:none;
+	border-radius: 7px;
+	-webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+	-o-border-radius: 7px;
+	-ms-border-radius: 7px;
+}
+
+.cus-nav span a:hover{
+	background:#FFF;
+	color:#C72424;
+	transition: .5s all;
+	-webkit-transition: .5s all;
+	-moz-transition: .5s all;
+	-o-transition: .5s all;
+	-ms-transition: .5s all;
 }
 .top-nav{
 	float:right;
@@ -56,7 +94,46 @@ html,body {
 	-o-border-radius: 7px;
 	-ms-border-radius: 7px;
 }
+
 .top-nav span a:hover{
+	background:#FFF;
+	color:#C72424;
+	transition: .5s all;
+	-webkit-transition: .5s all;
+	-moz-transition: .5s all;
+	-o-transition: .5s all;
+	-ms-transition: .5s all;
+}
+.cus-nav{
+	float:right;
+}
+.cus-nav p{
+	color:#FFF;
+	font-size:18px;
+	margin-top:4em;
+	font-weight:300;
+}
+.cus-nav p a{
+	font-size:18px;
+	color:#FFF;
+	font-weight:700;
+	margin-right:1em;
+}
+.cus-nav span a{
+	padding: 12px 25px;
+	color: #fff;
+	background: #24c790;
+	margin-left: 1em;
+	font-weight: 500;
+	text-decoration:none;
+	border-radius: 7px;
+	-webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+	-o-border-radius: 7px;
+	-ms-border-radius: 7px;
+}
+
+.cus-nav span a:hover{
 	background:#FFF;
 	color:#C72424;
 	transition: .5s all;
@@ -746,7 +823,7 @@ margin: .4em 0;
 	color: #000000;
 	margin: 0 0 .5em 0;
 }
-form input[type="text"] {
+/*form input[type="text"] {
 	width: 100%;
 	padding: 3% 0;
 	margin: 0 1em 1em 0;
@@ -755,7 +832,7 @@ form input[type="text"] {
 	outline: none;
 	font-weight: 700;
 	border: none;
-}
+}*/
 form input[type="submit"] {
 	width: 50%;
 	padding: .7em 0;
@@ -775,7 +852,7 @@ form input[type="submit"]:hover{
 	-o-transition: .5s all;
 	-ms-transition: .5s all;
 }
-form textarea{
+/*form textarea{
 	resize: none;
 	width: 100%;
 	padding: 3% 0;
@@ -785,7 +862,7 @@ form textarea{
 	font-weight: 700;
 	border: 1px;
 	min-height: 69px;
-}
+}*/
 .contact ul {
 	padding:0;
 	margin:0;
@@ -1070,6 +1147,19 @@ form textarea{
 	.top-nav span a {
 		padding: 10px 20px;
 	}
+        .cus-nav p {
+		font-size: 16px;
+		margin-top: 2em;
+	}
+	.cus-nav p a {
+		font-size: 16px;
+	}
+	.cus-nav p a {
+		font-size: 14px;
+	}
+	.cus-nav span a {
+		padding: 10px 20px;
+	}
 	.callbacks_container {
 		width: 94.6%;
 	}
@@ -1214,6 +1304,14 @@ form textarea{
 		margin-top: 2.5em;
 	}
 	.top-nav span a {
+		padding: 6px 18px;
+	}
+        
+        .cus-nav p {
+		font-size: 14px;
+		margin-top: 2.5em;
+	}
+	.cus-nav span a {
 		padding: 6px 18px;
 	}
 	.header-info p {

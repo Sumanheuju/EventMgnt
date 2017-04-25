@@ -35,7 +35,7 @@ public class AuthFilter implements Filter{
         
         HttpSession session = request.getSession(false);
         
-        if(session != null && session.getAttribute("loggedin") != null && (boolean) session.getAttribute("loggedin")){
+        if(session != null && session.getAttribute("loggedin") != null && (boolean)session.getAttribute("loggedin")){
             chain.doFilter(req, res);
         }else{
             response.sendRedirect(request.getContextPath() + "/?error");

@@ -2,6 +2,9 @@
 <%@include file="header.jsp" %>
 <div id="home" class="header">
 <%@include file="nav.jsp" %>
+<div class="top-nav">
+        <p>You are not Logged in, <a class="Signup play-icon popup-with-zoom-anim" href="#small-dialog3">Log in here </a>   or<span> <a class="Signup play-icon popup-with-zoom-anim" href="#small-dialog2">Register</a></P>
+    </div>
 <!-- header -->
 <div class="clearfix"> </div>
 
@@ -150,10 +153,13 @@
             <div class="login">
                 <h3>Login</h3>
                 <p>Enter your account details to login</p>
+                
                 <input type="text" name="email" maxlength="20" value="EMAIL" onfocus="this.value = '';" onblur="if (this.value == '') {
                             this.value = 'EMAIL';
                         }">			
+                
                 <input type="password" name="password" maxlength="10" placeholder="PASSWORD" onfocus="this.value = '';" onblur="if (this.value == '')">							
+                
                 <input type="submit"  value="Submit"/>
             </div>
         </form>
