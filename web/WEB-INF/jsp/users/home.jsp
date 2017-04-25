@@ -129,7 +129,7 @@
                                     </div>             
                                     <div class="col-xs-12 col-sm-4 text-center">
                                         <figure>
-                                            <img src="/build/web/resources/images/profilepics/1005.jpg" alt="" class="img-circle img-responsive">
+                                            <img src="${SITE_URL}/static/resources/images/profilepics/${userDetail.userId}.jpg" alt="" class="img-circle img-responsive">
                                         </figure>
                                     </div>
                                 </div>            

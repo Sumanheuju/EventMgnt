@@ -90,8 +90,8 @@ public class UsersController {
 
         HttpServletRequest req = (HttpServletRequest) request;
         HttpSession session = req.getSession();
-        String rootDirectory = req.getSession().getServletContext().getRealPath("/");
-
+        String rootDirectory = session.getServletContext().getRealPath("/");
+        
         UserDetail ud = new UserDetail();
 
 //        if (StringUtils.hasLength(paramId)) {
@@ -117,8 +117,8 @@ public class UsersController {
 
     private UserDetail saveOrUpdateImage(MultipartFile multipartFile, UserDetail ud, String rootDirectory) {
         try {
-            String finalPath = rootDirectory + "resources/images/profilepics/";
-            System.out.println(">>>>>>>>>>?>>>>>>>>>" + rootDirectory);
+            String finalPath = rootDirectory + "WEB-INF/assets/resources/images/profilepics/";
+            System.out.println(">>>>>>>>>>?>>>>>>>>>" + finalPath);
             // File Directory for the Images
             File userImageDir = new File(finalPath);
 
