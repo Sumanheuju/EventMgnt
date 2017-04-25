@@ -7,7 +7,6 @@ package com.themercinaries.kabita.eventmgnt.controller.user;
 
 import com.themercinaries.kabita.eventmgnt.dao.UserDAO;
 import com.themercinaries.kabita.eventmgnt.dao.UserDetailDAO;
-import com.themercinaries.kabita.eventmgnt.entity.User;
 import com.themercinaries.kabita.eventmgnt.entity.UserDetail;
 import java.io.File;
 import java.io.IOException;
@@ -19,7 +18,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -62,6 +60,8 @@ public class UsersController {
            ud.setUserId((int) session.getAttribute("userId"));
            udDAO.insert(ud);
        }
+       model.addAttribute("userDetail", udDAO.getById((int) session.getAttribute("userId")));
+       model.addAttribute("user", uDAO.getById((int) session.getAttribute("userId")));
         return "users/home";
     }
 

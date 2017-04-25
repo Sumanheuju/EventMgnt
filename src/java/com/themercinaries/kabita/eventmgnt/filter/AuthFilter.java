@@ -22,7 +22,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author sumanheuju
  */
-@WebFilter(filterName = "authFilter", urlPatterns = {"/admin/*", "/users/*"})
+@WebFilter(filterName = "authFilter", urlPatterns = {"/admin/*", "/users/*","/events/*"})
 public class AuthFilter implements Filter{
 
 
