@@ -6,24 +6,30 @@
 package com.themercinaries.kabita.eventmgnt.controller.admin;
 
 import com.themercinaries.kabita.eventmgnt.dao.EventDAO;
+import com.themercinaries.kabita.eventmgnt.dao.UserDAO;
+import javax.servlet.ServletRequest;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-/**
- *
- * @author sumanheuju
- */
+
 @Controller
-@RequestMapping(value ="/admin/event")
+@RequestMapping(value ="/admin/events")
 public class EventAdminController {
     @Autowired
     private EventDAO eDAO;
+    @Autowired
+    private UserDAO uDAO;
     
     @RequestMapping(value = "show", method = RequestMethod.GET)
-    public String index(Model model){
+    public String index(Model model, ServletRequest request){
+        HttpServletRequest req = (HttpServletRequest)request;
+        HttpSession session = req.getSession();
+        
         model.addAttribute("events", eDAO.getAll());
         return "/admin/event/eventDetail";
     }

@@ -8,14 +8,12 @@ package com.themercinaries.kabita.eventmgnt.dao;
 import com.themercinaries.kabita.eventmgnt.entity.Event;
 import java.util.List;
 
-/**
- *
- * @author sumanheuju
- */
+
 public interface EventDAO {
     int insert(Event e);
     int update(Event e);
     int delete(int id);
     List<Event> getAll();
+    List<Event> getEach(int id);
     Event getById(int id);
 }

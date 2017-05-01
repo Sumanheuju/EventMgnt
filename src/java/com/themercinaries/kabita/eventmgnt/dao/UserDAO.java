@@ -8,10 +8,7 @@ package com.themercinaries.kabita.eventmgnt.dao;
 import com.themercinaries.kabita.eventmgnt.entity.User;
 import java.util.List;
 
-/**
- *
- * @author sumanheuju
- */
+
 public interface UserDAO {
     int insert(User u);
     int update(User u);

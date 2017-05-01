@@ -8,10 +8,7 @@ package com.themercinaries.kabita.eventmgnt.entity;
 import java.util.Date;
 import org.springframework.web.multipart.MultipartFile;
 
-/**
- *
- * @author sumanheuju
- */
+
 public class UserDetail {
     private int userId;
     private String firstName, lastName, contactNo, profileDescription, linkedin, github;

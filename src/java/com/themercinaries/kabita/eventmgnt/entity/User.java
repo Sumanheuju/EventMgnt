@@ -5,10 +5,7 @@
  */
 package com.themercinaries.kabita.eventmgnt.entity;
 
-/**
- *
- * @author sumanheuju
- */
+
 public class User {
     private int id;
     private String username, email, password;

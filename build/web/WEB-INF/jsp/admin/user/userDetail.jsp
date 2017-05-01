@@ -8,7 +8,7 @@
 	</div>
 	
     
-    <table>
+    <table class="table table-bordered table-responsive table-hover">
         <tr>
             <th>Profile-Picture</th>
             <th>Name</th>
@@ -17,24 +17,21 @@
             <th>Linkedin Link</th>
             <th>Github Link</th>
             <th>Status</th>
-            <th>Action</th>
         </tr>
-        
-        <c:forEach var="ud" items="userDetail">
+        <c:forEach var="udd" items="${userdetails}">
             <tr>
-                <td><img src="${SITE_URL}/resources/images/profilepics/Suman4.jpg" height="60px" alt="image" /></td>
-                <td>${ud.firstName}</td>
-                <td>${ud.contactNo}</td>
-                <td>${ud.profileDescription}</td>
-                <td>${ud.linkedin}</td>
-                <td>${ud.github}</td>
-                <td>${ud.status}</td>
-                <td>
-                    <a href="/edit/${ud.userId}">Edit</a>
-                    <a href="/delete/${ud.userId}">delete</a>
-                </td>
+                <td><img src="${SITE_URL}/static/resources/images/profilepics/${udd.userId}.jpg" height="60px" alt="image" /></td>
+                <td>${udd.firstName} ${udd.lastName}</td>
+                <td>${udd.contactNo}</td>
+                <td>${udd.profileDescription}</td>
+                <td>${udd.linkedin}</td>
+                <td>${udd.github}</td>
+                <td>${udd.status}</td>
+                
+                
             </tr>
         </c:forEach>
+        
     </table>
 	
 	

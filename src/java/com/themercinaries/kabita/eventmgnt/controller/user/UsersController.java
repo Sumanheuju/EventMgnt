@@ -18,15 +18,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
-/**
- *
- * @author sumanheuju
- */
+
 @Controller
 @RequestMapping(value = "/users")
 public class UsersController {
@@ -47,11 +45,7 @@ public class UsersController {
         
         HttpServletRequest req = (HttpServletRequest) request;
         HttpSession session = req.getSession();
-        
-        
-        
-        
-        
+
        try{
         if (udDAO.getById((int)session.getAttribute("userId")).getUserId() == ud.getUserId()) {
             System.out.println("NO Eroor ");
@@ -62,6 +56,13 @@ public class UsersController {
        }
        model.addAttribute("userDetail", udDAO.getById((int) session.getAttribute("userId")));
        model.addAttribute("user", uDAO.getById((int) session.getAttribute("userId")));
+        return "users/home";
+    }
+    
+    @RequestMapping(value = "/home/{id}", method = RequestMethod.GET)
+    public String showad(@PathVariable("id") int id, Model model){
+        model.addAttribute("user", uDAO.getById(id));
+        model.addAttribute("userDetail", udDAO.getById(id));
         return "users/home";
     }
 

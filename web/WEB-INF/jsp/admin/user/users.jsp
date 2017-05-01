@@ -22,7 +22,7 @@
                 <td>
                     <a href="${SITE_URL}/admin/user/edit/${us.id}"><button class="btn btn-sm btn-success">Edit</button></a>
                     <a href="${SITE_URL}/admin/user/delete/${us.id}" onclick="return confirm('Are you Sure !! :D')"><button class="btn btn-sm btn-danger">DELETE</button></a>
-                    <a href="${SITE_URL}/admin/user/show"><button class="btn btn-sm btn-primary">Profile</button></a>
+                    <a href="${SITE_URL}/users/home/${us.id}"><button class="btn btn-sm btn-primary">Profile</button></a>
                 </td>
             </tr>
         </c:forEach>

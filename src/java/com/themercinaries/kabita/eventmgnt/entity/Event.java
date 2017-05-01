@@ -5,12 +5,9 @@
  */
 package com.themercinaries.kabita.eventmgnt.entity;
 
+
 import java.util.Date;
 
-/**
- *
- * @author sumanheuju
- */
 public class Event {
     private int id;
     private String eventName,eventLocation, eventDescription;
@@ -70,11 +67,11 @@ public class Event {
         this.eventDescription = eventDescription;
     }
 
-    public int getUser() {
+    public int getUserId() {
         return userId;
     }
 
-    public void setUser(int userId) {
+    public void setUserId(int userId) {
         this.userId = userId;
     }
 

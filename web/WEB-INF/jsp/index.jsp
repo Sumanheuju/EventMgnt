@@ -37,7 +37,7 @@
                 <span aria-hidden="true">×</span>
             </button> 
             <strong>Invalid Username/Password !!</strong> <br/>
-            Sorry Bro !! Do try again !! :D 
+            Sorry You àre not Sexy!! You cant login ! :D 
         </div>
     </c:if> 
 
@@ -48,7 +48,9 @@
                 <p>BY<span>TEMBANG</span><span class="sub-text">Jawa</span></p>
                 <p>	AT GOR SATRIA PURWOKERTO</p>
                 <div class="red">20 SEPTEMBER 2014</div>
-                <div class="button"><a href="#">View Here</a></div>
+                <div class="button">
+                    <a href="#event">View Here</a>
+                </div>
             </div>
         </li>
         <li>
@@ -57,7 +59,7 @@
                 <p>BY<span>TEMBANG</span><span class="sub-text">Jawa</span></p>
                 <p>	AT WASHINGTON DC</p>
                 <div class="red">24 OCTOMER 2014</div>
-                <div class="button"><a href="#">View Here</a></div>
+                <div class="cus-nav"><a href="#">View Here</a></div>
             </div>
         </li>
         <li>

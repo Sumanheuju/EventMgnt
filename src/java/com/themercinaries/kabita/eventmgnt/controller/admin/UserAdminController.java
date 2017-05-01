@@ -8,8 +8,6 @@ package com.themercinaries.kabita.eventmgnt.controller.admin;
 import com.themercinaries.kabita.eventmgnt.dao.UserDAO;
 import com.themercinaries.kabita.eventmgnt.dao.UserDetailDAO;
 import com.themercinaries.kabita.eventmgnt.entity.User;
-import com.themercinaries.kabita.eventmgnt.entity.UserDetail;
-import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,10 +16,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-/**
- *
- * @author sumanheuju
- */
 
 @Controller
 @RequestMapping(value = "/admin/user")
@@ -40,8 +34,8 @@ public class UserAdminController {
     
     @RequestMapping(value = "/show" ,method = RequestMethod.GET)
     public String show(Model model){
-        udDAO.getAll().clear();
-        model.addAttribute("userDetail", udDAO.getAll());
+        
+        model.addAttribute("userdetails", udDAO.getAll());
         return "admin/user/userDetail";
     }
     

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 25, 2017 at 09:58 PM
+-- Generation Time: Apr 27, 2017 at 07:01 AM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 7.1.1
 
@@ -32,13 +32,21 @@ CREATE TABLE `tbl_events` (
   `user_id` int(11) NOT NULL,
   `event_image` varchar(255) NOT NULL,
   `event_location` varchar(150) NOT NULL,
-  `event_date_time` datetime NOT NULL,
+  `event_date_time` date DEFAULT NULL,
   `event_description` text NOT NULL,
   `event_price` double NOT NULL,
   `added_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `modified_date` date DEFAULT NULL,
   `status` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_events`
+--
+
+INSERT INTO `tbl_events` (`id`, `event_name`, `user_id`, `event_image`, `event_location`, `event_date_time`, `event_description`, `event_price`, `added_date`, `modified_date`, `status`) VALUES
+(1, 'Google X Coder', 1006, 'Google X Coder', 'California, USA', '2017-04-28', 'Google X Coder Competiotion for all the developers in the world. Great Opportunities in your footstep. not exactly in your footstep cuz you have to go USA SO hehe \"D', 12000, '2017-04-26 04:52:38', NULL, 1),
+(2, 'Tech happiness For Children (Karnali)', 1001, 'Tech happiness For Children (Karnali)', 'Karnali (Obviously)', '2017-05-24', 'This is for the Welfare of the Children. And I Always wanted this . Well this came true Virtually hehe :D I\'m Awesome !', 0, '2017-04-26 04:55:26', NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -93,10 +101,11 @@ CREATE TABLE `tbl_users_profile` (
 
 INSERT INTO `tbl_users_profile` (`user_id`, `first_name`, `last_name`, `contact_no`, `profile_description`, `profile_picture`, `linkedin`, `github`, `added_date`, `modified_date`, `status`) VALUES
 (1001, 'Kabita', 'Lama', '9840021400', 'She is Great', '1001', 'Hello', 'heolo', '2017-04-25 06:23:55', NULL, 1),
+(1002, 'sUman', 'Heuju', '9832423', 'asdasd', '1002', 'asd', 'asdasd', '2017-04-26 05:52:29', NULL, 1),
 (1003, 'Deepesh', 'Hero', 'bro', 'aksdjb', '1003', 'k.ajbsd', '.kjabsd', '2017-04-25 19:55:46', NULL, 1),
 (1004, 'Clerk ', 'Kent', '98123', 'He is the man Of the Steel', '1004', 'asd', 'asd', '2017-04-25 19:04:57', NULL, 1),
 (1005, 'Bruce ', 'Wayne', '9813344166', 'I\'m BATMAN !! :D', '1005', 'asd', 'hgfv', '2017-04-25 19:52:48', NULL, 1),
-(1006, 'Iron', 'man', '981231', 'He is the Freaking IronMan man!! ', '1006', 'Iron buddy', 'Iron giddy', '2017-04-25 17:38:30', NULL, 1);
+(1006, 'Iron', 'man', '981231', 'He is the Freaking IronMan man!! ', '1006', 'Iron buddy', 'Iron giddy', '2017-04-25 17:38:30', NULL, 0);
 
 --
 -- Indexes for dumped tables
@@ -129,7 +138,7 @@ ALTER TABLE `tbl_users_profile`
 -- AUTO_INCREMENT for table `tbl_events`
 --
 ALTER TABLE `tbl_events`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `tbl_users`
 --

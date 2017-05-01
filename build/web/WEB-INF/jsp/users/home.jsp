@@ -97,11 +97,14 @@
     </style>
     <div class="top-nav">
         <p></p>
-        <span> <a href="${SITE_URL}/logout" class="Signup play-icon">Logout</a></span>
+        <span> 
+            <a href="${SITE_URL}/" class="Signup play-icon">Home</a>
+            <a href="${SITE_URL}/logout" class="Signup play-icon">Logout</a>
+        </span>
     </div>
     <div class="cus-nav">
-        <span><a href="${SITE_URL}/events/create" class="Signup play-icon">Create Event</a> 
-            <a href="${SITE_URL}/users/addDetails" class="Signup play-icon">Update Profile</a></span>
+        <span><a href="${SITE_URL}/events/add" class="fa fa-plus-circle"> <b>Create Event</b></a> 
+            <a href="${SITE_URL}/users/addDetails" class="fa fa-pencil"> <b>Update Profile</b></a></span>
 
 
         <div>
@@ -137,12 +140,12 @@
                                     <div class="col-xs-12 col-sm-4 emphasis">
                                         <h2><strong> 7 </strong></h2>                    
                                         <small>Events</small>
-                                        <button class="btn btn-success btn-block"><span class="fa fa-plus-circle"></span> My Events</button>
+                                        <a href="${SITE_URL}/events/myevents"><button class="btn btn-success btn-block"><span class="fa fa-book"></span> My Events</button></a>
                                     </div>
                                     <div class="col-xs-12 col-sm-4 emphasis">
                                         <h2><strong>245</strong></h2>                    
                                         <small>Following</small>
-                                        <a href="${SITE_URL}/users/addDetails"><button class="btn btn-info btn-block"><span class="fa fa-user"></span> View Profile </button></a>
+                                        <a href="${SITE_URL}/users/addDetails"><button class="btn btn-info btn-block"><span class="fa fa-user"></span> Edit Profile </button></a>
                                     </div>
                                     
                                 </div>

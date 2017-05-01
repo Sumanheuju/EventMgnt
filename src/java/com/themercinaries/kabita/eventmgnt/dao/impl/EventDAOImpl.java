@@ -17,10 +17,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
-/**
- *
- * @author sumanheuju
- */
+
 @Repository(value = "eDAO")
 public class EventDAOImpl implements EventDAO{
 
@@ -31,13 +28,13 @@ public class EventDAOImpl implements EventDAO{
         Event e = new Event();
         e.setId(rs.getInt("id"));
         e.setEventName(rs.getString("event_name"));
-        e.setUser(rs.getInt("user_id"));
+        e.setUserId(rs.getInt("user_id"));
         e.setEventImage(rs.getString("event_image"));
         e.setEventLocation(rs.getString("event_location"));
         e.setEventDateTime(rs.getDate("event_date_time"));
         e.setEventDescription(rs.getString("event_description"));
         e.setEventPrice(rs.getDouble("event_price"));
-        e.setAddedDate(rs.getTimestamp("added_date"));
+            e.setAddedDate(rs.getTimestamp("added_date"));
         e.setModifiedDate(rs.getDate("modified_date"));
         e.setStatus(rs.getBoolean("status"));
         
@@ -48,7 +45,7 @@ public class EventDAOImpl implements EventDAO{
     public int insert(Event e) {
         String sql = "INSERT INTO tbl_events (event_name, user_id, event_image,event_location, event_date_time, event_description,event_price,status) VALUES (?,?,?,?,?,?,?,?)";
         return jdbcTemplate.update(sql, new Object[]{
-            e.getEventName(),e.getUser(),e.getEventImage(),e.getEventLocation(),e.getEventDateTime(),e.getEventDescription(),e.getEventPrice(),e.isStatus()
+            e.getEventName(),e.getUserId(),e.getEventImage(),e.getEventLocation(),e.getEventDateTime(),e.getEventDescription(),e.getEventPrice(),e.isStatus()
         });
                 
     }
@@ -57,7 +54,7 @@ public class EventDAOImpl implements EventDAO{
     public int update(Event e) {
         String sql = "UPDATE tbl_events SET event_name=?, user_id=?, event_image=?,event_location=?, event_date_time=?, event_description=?,event_price=?,status=? where id=?";
         return jdbcTemplate.update(sql, new Object[]{
-            e.getEventName(),e.getUser(),e.getEventImage(),e.getEventLocation(),e.getEventDateTime(),e.getEventDescription(),e.getEventPrice(),e.isStatus(),e.getId()
+            e.getEventName(),e.getUserId(),e.getEventImage(),e.getEventLocation(),e.getEventDateTime(),e.getEventDescription(),e.getEventPrice(),e.isStatus(),e.getId()
         });
     }
 
@@ -80,8 +77,19 @@ public class EventDAOImpl implements EventDAO{
     
     @Override
     public Event getById(int id) {
-        String sql ="SELECT * from tbl_events where id=?";
+        String sql ="SELECT * from tbl_events where user_id=?";
         return jdbcTemplate.queryForObject(sql, new Object[]{id}, new RowMapper<Event>() {
+            @Override
+            public Event mapRow(ResultSet rs, int i) throws SQLException {
+                return mapData(rs);
+            }
+        });
+    }
+
+    @Override
+    public List<Event> getEach(int id) {
+        String sql ="SELECT * from tbl_events where user_id=?";
+        return jdbcTemplate.query(sql, new Object[]{id}, new RowMapper<Event>() {
             @Override
             public Event mapRow(ResultSet rs, int i) throws SQLException {
                 return mapData(rs);
