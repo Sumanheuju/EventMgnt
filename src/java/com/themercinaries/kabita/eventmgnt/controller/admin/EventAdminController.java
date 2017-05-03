@@ -26,12 +26,10 @@ public class EventAdminController {
     private UserDAO uDAO;
     
     @RequestMapping(value = "show", method = RequestMethod.GET)
-    public String index(Model model, ServletRequest request){
-        HttpServletRequest req = (HttpServletRequest)request;
-        HttpSession session = req.getSession();
+    public String index(Model model){
+        
         
         model.addAttribute("events", eDAO.getAll());
         return "/admin/event/eventDetail";
-    }
-    
+    }   
 }

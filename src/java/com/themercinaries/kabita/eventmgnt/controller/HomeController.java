@@ -5,6 +5,7 @@
  */
 package com.themercinaries.kabita.eventmgnt.controller;
 
+import com.themercinaries.kabita.eventmgnt.dao.EventDAO;
 import com.themercinaries.kabita.eventmgnt.dao.UserDAO;
 import com.themercinaries.kabita.eventmgnt.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,8 +25,13 @@ public class HomeController {
     @Autowired
     private UserDAO uDAO;
     
+    @Autowired
+    private EventDAO eDAO;
+    
     @RequestMapping(method = RequestMethod.GET)
-    public String home(){
+    public String home(Model model){
+        
+        model.addAttribute("event", eDAO.getAll());
         return "index";
     }
     

@@ -42,53 +42,23 @@
     </c:if> 
 
     <ul class="rslides" id="slider4">
+     
+ <c:forEach var="ev" items="${event}">
         <li>
             <div class="header-info">
-                <p>LIVE PERMORMANCE</p>
-                <p>BY<span>TEMBANG</span><span class="sub-text">Jawa</span></p>
-                <p>	AT GOR SATRIA PURWOKERTO</p>
-                <div class="red">20 SEPTEMBER 2014</div>
-                <div class="button">
-                    <a href="#event">View Here</a>
-                </div>
-            </div>
-        </li>
-        <li>
-            <div class="header-info">
-                <p>LIVE TELECAST</p>
-                <p>BY<span>TEMBANG</span><span class="sub-text">Jawa</span></p>
-                <p>	AT WASHINGTON DC</p>
-                <div class="red">24 OCTOMER 2014</div>
+               
+                <p>${ev.eventName}</p>
+                <p>BY<span> HARRY</span><span class="sub-text">POTTER</span></p>
+                <p>	${ev.eventLocation}</p>
+                <div class="red">${ev.eventDateTime}</div>
+
+
+                
                 <div class="cus-nav"><a href="#">View Here</a></div>
             </div>
         </li>
-        <li>
-            <div class="header-info">
-                <p>LIVE DANCE SHOW</p>
-                <p>BY<span>TEMBANG</span><span class="sub-text">Jawa</span></p>
-                <p>	AT NEW YORK</p>
-                <div class="red">15 JANUARY 2013</div>
-                <div class="button"><a href="#">View Here</a></div>
-            </div>
-        </li>
-        <li>
-            <div class="header-info">
-                <p>LIVE TELECAST</p>
-                <p>BY<span>TEMBANG</span><span class="sub-text">Jawa</span></p>
-                <p>	AT WASHINGTON DC</p>
-                <div class="red">24 OCTOMER 2014</div>
-                <div class="button"><a href="#">View Here</a></div>
-            </div>
-        </li>
-        <li>
-            <div class="header-info">
-                <p>LIVE DANCE SHOW</p>
-                <p>BY<span>TEMBANG</span><span class="sub-text">Jawa</span></p>
-                <p>	AT NEW YORK</p>
-                <div class="red">15 JANUARY 2013</div>
-                <div class="button"><a href="#">View Here</a></div>
-            </div>
-        </li>
+        </c:forEach>
+
     </ul>
     <div class="clearfix"> </div>
     <!-- banner Slider Ends Here --> 
@@ -264,128 +234,41 @@
     <!-- container -->
     <div class="container">
         <h3>Events</h3>
+        <c:forEach var="ev" items="${event}">
         <div class="event-grids">
-            <div class="col-md-3 event-grid">
+            
+            <div class="col-md-6 event-grid">
                 <div class="pic"> </div>
                 <ul>
-                    <li class="hedding">Wembley Stadium</li>
-                    <li class="date">2 December 2014</li>
+                    <li class="hedding">${ev.eventName}</li>
+                    <li class="date">${ev.eventDateTime}</li>
                 </ul>
                 <div class="clearfix"> </div>
             </div>
             <div class="col-md-4 event-grid small-text">
-                <p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet.</p>
+                <p>${ev.eventDescription}</p>
             </div>
             <div class="col-md-2 event-grid large-text">
-                <p class="text">$ 200 USD</p>
+                <p class="text">$ ${ev.eventPrice}</p>
             </div>
-            <div class="col-md-3 event-grid text-button">
+<!--            <div class="col-md-3 event-grid text-button">
                 <ul>
                     <li class="num">100 tickets Available</li>
                     <li class="button yellow"><a href="#">Buy Ticket</a></li>
                 </ul>
-            </div>
+            </div>-->
+            
             <div class="clearfix"> </div>
         </div>
-        <div class="event-grids">
-            <div class="col-md-3 event-grid">
-                <div class="pic"> </div>
-                <ul>
-                    <li class="hedding">Wembley Stadium</li>
-                    <li class="date">2 December 2014</li>
-                </ul>
-                <div class="clearfix"> </div>
-            </div>
-            <div class="col-md-4 event-grid small-text">
-                <p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet.</p>
-            </div>
-            <div class="col-md-2 event-grid large-text">
-                <p class="text">$ 200 USD</p>
-            </div>
-            <div class="col-md-3 event-grid text-button">
-                <ul>
-                    <li class="num">100 tickets Available</li>
-                    <li class="button yellow"><a href="#">Buy Ticket</a></li>
-                </ul>
-            </div>
-            <div class="clearfix"> </div>
-        </div>
-        <div class="event-grids">
-            <div class="col-md-3 event-grid">
-                <div class="pic"> </div>
-                <ul>
-                    <li class="hedding">Wembley Stadium</li>
-                    <li class="date">2 December 2014</li>
-                </ul>
-                <div class="clearfix"> </div>
-            </div>
-            <div class="col-md-4 event-grid small-text">
-                <p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet.</p>
-            </div>
-            <div class="col-md-2 event-grid large-text">
-                <p class="text">$ 200 USD</p>
-            </div>
-            <div class="col-md-3 event-grid text-button">
-                <ul>
-                    <li class="num">100 tickets Available</li>
-                    <li class="button yellow"><a href="#">Buy Ticket</a></li>
-                </ul>
-            </div>
-            <div class="clearfix"> </div>
-        </div>
-        <div class="event-grids">
-            <div class="col-md-3 event-grid">
-                <div class="pic"> </div>
-                <ul>
-                    <li class="hedding">Wembley Stadium</li>
-                    <li class="date">2 December 2014</li>
-                </ul>
-                <div class="clearfix"> </div>
-            </div>
-            <div class="col-md-4 event-grid small-text">
-                <p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet.</p>
-            </div>
-            <div class="col-md-2 event-grid large-text">
-                <p class="text">$ 200 USD</p>
-            </div>
-            <div class="col-md-3 event-grid text-button">
-                <ul>
-                    <li class="num">100 tickets Available</li>
-                    <li class="button yellow"><a href="#">Buy Ticket</a></li>
-                </ul>
-            </div>
-            <div class="clearfix"> </div>
-        </div>
-        <div class="event-grids">
-            <div class="col-md-3 event-grid">
-                <div class="pic"> </div>
-                <ul>
-                    <li class="hedding">Wembley Stadium</li>
-                    <li class="date">2 December 2014</li>
-                </ul>
-                <div class="clearfix"> </div>
-            </div>
-            <div class="col-md-4 event-grid small-text">
-                <p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet.</p>
-            </div>
-            <div class="col-md-2 event-grid large-text">
-                <p class="text">$ 200 USD</p>
-            </div>
-            <div class="col-md-3 event-grid text-button">
-                <ul>
-                    <li class="num">100 tickets Available</li>
-                    <li class="button yellow"><a href="#">Buy Ticket</a></li>
-                </ul>
-            </div>
-            <div class="clearfix"> </div>
-        </div>
+            </c:forEach>
+        
     </div>
     <!-- container -->
 </div>
 <!-- contact-events -->
-<!-- portfolio -->
+<!-- portfolio 
 <div class="portfolio">
-    <!-- container -->
+     container 
     <div class="container">
         <h3>Gallery</h3>
         <div class="gallery-images">
@@ -431,8 +314,8 @@
             </div>
         </div>
     </div>
-    <!-- container -->
-</div>
+     container 
+</div>-->
 <!-- portfolio -->
 <!-- contact -->
 <%@include file="footer.jsp" %>
