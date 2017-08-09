@@ -18,7 +18,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Kabita's Event Mgnt !!</title>
+        <title>Event Mgnt !!</title>
         <link href="${SITE_URL}/static/css/style.css" rel="stylesheet" type="text/css" media="all" />
 <!--                <link href="${SITE_URL}/static/css/style123.css" rel="stylesheet" type="text/css" media="all" />-->
         <link href="${SITE_URL}/static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all">

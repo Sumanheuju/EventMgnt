@@ -45,7 +45,7 @@
 <div class="footer">
     <div class="copyright">
         <p>
-            KABITA's <a href="https://www.facebook.com/KabitaWAY">MonkeyKing.com</a>
+            FRANKY's <a href="https://www.facebook.com/KabitaWAY">MonkeyKing.com</a>
         </p>
     </div>
 </div>

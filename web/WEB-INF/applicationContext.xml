@@ -11,7 +11,7 @@
 
     <bean id="propertyConfigurer"
           class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"
-          p:location="/WEB-INF/kabitaDatabase.properties" />
+          p:location="/WEB-INF/database.properties" />
 
 <bean id="dataSource"
     class="org.springframework.jdbc.datasource.DriverManagerDataSource"
